@@ -10,7 +10,7 @@ import Navbar from 'react-bootstrap/Navbar'
 function App() {
 
   const customStyle : any = {
-    style : 'text-white m-2'
+    style : 'text-white fw-bolder m-2'
   }
 
   return (
@@ -18,14 +18,17 @@ function App() {
     <Router>
        <>
 
-          <Navbar bg="dark" variant="dark">
+          <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container className=''>
-              <Navbar.Brand>Yusuf Firmansyah</Navbar.Brand>
-              <Nav className="me-auto w-100">
-               <Link className={`nav-link ${customStyle?.style}`} to="/">Home</Link>
-               <Link className={`nav-link ${customStyle.style}`} to="/best-pratice">Best Practice</Link>
-               <Link className={`nav-link ${customStyle.style}`} to="/blog">Blog</Link>
-              </Nav>
+              <Navbar.Brand className=''>Yusuf Firmansyah</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                  <Nav className="me-auto w-100" id="responsive-navbar-nav">
+                    <Link className={`nav-link ${customStyle?.style}`} to="/">Home</Link>
+                    <Link className={`nav-link ${customStyle.style}`} to="/best-pratice">Best Practice</Link>
+                    <Link className={`nav-link ${customStyle.style}`} to="/blog">Blog</Link>
+                  </Nav>
+              </Navbar.Collapse>
             </Container>
           </Navbar>
 
