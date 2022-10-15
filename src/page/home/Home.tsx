@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-const Home : FC = () => {
-    return(
-        <>
-            <h1>Home Page...</h1>
-        </>
-    )
-}
+const Home: FC = () => {
+  return (
+    <>
+      <span>Home Page...</span>
+    </>
+  );
+};
 
-export { Home }
+export { Home };
