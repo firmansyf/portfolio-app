@@ -1,9 +1,10 @@
 import { FC } from "react";
+import { Content } from "../../components/content/Content";
 
 const Home: FC = () => {
   return (
     <>
-      <span>Home Page...</span>
+      <div className="row"></div>
     </>
   );
 };

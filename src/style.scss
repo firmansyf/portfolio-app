@@ -1,0 +1,7 @@
+@import "./assets/style/init.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+$main-font-family: "Roboto", sans-serif;
+
+body {
+  font-family: $main-font-family !important;
+}

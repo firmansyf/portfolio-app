@@ -1,11 +1,13 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-const BestPractice : FC = () => {
-    return(
-        <>
-            <h1>Practice Page...</h1>
-        </>
-    )
-}
+const BestPractice: FC = () => {
+  return (
+    <>
+      <div className="row">
+        <span>Development in progres...</span>
+      </div>
+    </>
+  );
+};
 
-export { BestPractice }
+export { BestPractice };
