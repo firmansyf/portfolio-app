@@ -1,11 +1,13 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-const Blog : FC = () => {
-    return(
-        <>
-            <h1>Blog Page...</h1>
-        </>
-    )
-}
+const Blog: FC = () => {
+  return (
+    <>
+      <div className="row">
+        <span>Coming soon....</span>
+      </div>
+    </>
+  );
+};
 
-export { Blog }
+export { Blog };

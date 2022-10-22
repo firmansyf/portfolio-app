@@ -1,43 +1,36 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import { BestPractice } from './page/best-practice/Practice'
-import { Blog } from './page/blog/Blog'
-import { Home } from './page/home/Home'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
+import { FC } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/navbar/Navbar";
+import { Home } from "./page/home/Home";
 
-function App() {
-
-  const customStyle : any = {
-    style : 'text-white m-2'
-  }
-
+const App: FC = () => {
+  const routes = [
+    {
+      path: "/",
+      exact: true,
+      main: () => <Home />,
+    },
+    {
+      path: "/blog",
+      main: () => <h2 className="blog">Bubblegum</h2>,
+    },
+    {
+      path: "/about",
+      main: () => <h2>Shoelaces</h2>,
+    },
+  ];
   return (
-   <>
-    <Router>
-       <>
-
-          <Navbar bg="dark" variant="dark">
-            <Container className=''>
-              <Navbar.Brand>Yusuf Firmansyah</Navbar.Brand>
-              <Nav className="me-auto w-100">
-               <Link className={`nav-link ${customStyle?.style}`} to="/">Home</Link>
-               <Link className={`nav-link ${customStyle.style}`} to="/best-pratice">Best Practice</Link>
-               <Link className={`nav-link ${customStyle.style}`} to="/blog">Blog</Link>
-              </Nav>
-            </Container>
-          </Navbar>
-
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/best-pratice' element={<BestPractice/>} />
-            <Route path='/blog'  element={<Blog/>} />
-          </Routes>   
-        </>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={<route.main />} />
+          ))}
+        </Routes>
       </Router>
-   </>
+    </>
   );
-}
+};
 
-export default App
+export default App;
