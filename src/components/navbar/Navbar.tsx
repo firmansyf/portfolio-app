@@ -1,77 +1,67 @@
 import { FC } from "react";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faComment } from "@fortawesome/free-solid-svg-icons";
+import { Navbar as Head, Nav, Container } from "react-bootstrap";
 
 const Navbar: FC = () => {
+  const activeClassName = {
+    color: "#000",
+    textDecoration: "underline",
+  };
+
+  const unactiveClassName = {
+    textDecoration: "none",
+  };
+
   return (
     <>
-      <div className="navbar navbar-expand-lg head-nav sticky-top">
-        <div className="container-fluid">
-          <div className="d-flex justify-content-center w-50">
-            <Link
-              style={{ fontSize: "16px" }}
-              to="/"
-              className="navbar-brand brand-text"
-            >
-              Yu n Vegetable
-            </Link>
-          </div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div
-            className="nav justify-content-center collapse navbar-collapse"
-            id="navbarNavAltMarkup"
-          >
-            <div className="navbar-nav">
-              <Link
-                className="nav-link mx-2 text-white"
-                style={{ fontSize: "14px" }}
-                aria-current="page"
-                to="/"
-              >
-                Home
-              </Link>
-              <Link
-                className="nav-link mx-2 text-white"
-                style={{ fontSize: "14px" }}
-                to="/blog"
-              >
+      <Head bg="" expand="lg" className="sticky-top shadow-sm">
+        <Container>
+          <Head.Brand href="#">YuFood</Head.Brand>
+          <Head.Toggle aria-controls="basic-navbar-nav" />
+          <Head.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto section-link w-full">
+              <NavLink className="mx-1 nav-link" to="/">
+                Beranda
+              </NavLink>
+              <NavLink className="mx-1 nav-link" to="/blog">
                 Blog
-              </Link>
-              <Link
-                className="nav-link mx-2 text-white"
-                style={{ fontSize: "14px" }}
-                to="/about"
-              >
+              </NavLink>
+              <NavLink className="mx-1 nav-link" to="/about">
                 About
-              </Link>
-            </div>
-          </div>
-        </div>
+              </NavLink>
+              <NavLink className="mx-1 nav-link" to="/article">
+                Article
+              </NavLink>
+              <NavLink className="mx-1 nav-link" to="/career">
+                Career
+              </NavLink>
+            </Nav>
+          </Head.Collapse>
 
-        <div className="d-flex justify-content-center w-50">
-          <div className="">
-            <div className="position-relative">
-              <FontAwesomeIcon icon={faBell} size="lg" inverse />
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                99+
-                <span className="visually-hidden">unread messages</span>
-              </span>
+          <div className="d-flex justify-content-center w-full">
+            <div className="mx-2">
+              <div className="position-relative">
+                <FontAwesomeIcon icon={faBell} style={{ fontSize: 17 }} />
+              </div>
+            </div>
+
+            <div className="mx-2">
+              <div className="position-relative">
+                <FontAwesomeIcon icon={faComment} style={{ fontSize: 17 }} />
+                <span
+                  style={{ fontSize: 10 }}
+                  className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >
+                  10
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Container>
+      </Head>
     </>
   );
 };

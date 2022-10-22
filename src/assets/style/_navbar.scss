@@ -1,5 +1,14 @@
 @import "./constant";
 
 .navbar {
-  background-color: $color-green-main;
+  z-index: 7;
+  background-color: $color-white;
+}
+
+.navbar a {
+  font-size: $font16;
+}
+
+.navbar .container .navbar-collapse .section-link a {
+  font-size: $font16;
 }
